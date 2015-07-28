@@ -9,7 +9,7 @@
 angular.module('lsiDashboard')
 	.directive('lastcertificates',function(){
 		return {
-        templateUrl:'scripts/directives/lastcertificates/lastcertificates.html',
+        templateUrl:'scripts/directives/last_certificates/last_certificates.html',
         restrict: 'E',
         replace: true,
     	}

@@ -80,7 +80,9 @@ angular
                             files: [
                                 'scripts/controllers/main.js',
                                 'scripts/directives/dashboard/stats/stats.js',
-                                'scripts/directives/lastcertificates/lastcertificates.js'
+                                'scripts/directives/last_certificates/last_certificates.js',
+                                'scripts/directives/last_examinations/last_examinations.js',
+                                'scripts/directives/next_examination/next_examination.js'
                             ]
                         })
                     }
@@ -89,6 +91,42 @@ angular
             .state('dashboard.blank', {
                 templateUrl: 'views/pages/blank.html',
                 url: '/blank'
+            })
+            .state('dashboard.newcertificate', {
+                templateUrl: 'views/pages/new_certificate.html',
+                url: '/new-certificate',
+                controller: 'MainCtrl',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'lsiDashboard',
+                            files: [
+                                'scripts/controllers/main.js',
+                                'scripts/directives/next_examination/next_examination.js'
+                            ]
+                        })
+                    }
+                }
+            })
+            .state('dashboard.examinations', {
+                templateUrl: 'views/archives/examinations.html',
+                url: '/archives/examinations'
+            })
+            .state('dashboard.certificates', {
+                templateUrl: 'views/archives/certificates.html',
+                url: '/archives/certificates'
+            })
+            .state('dashboard.cylinders', {
+                templateUrl: 'views/archives/cylinders.html',
+                url: '/archives/cylinders.html'
+            })
+            .state('dashboard.backoffice', {
+                templateUrl: 'views/pages/back_office.html',
+                url: '/back-office'
+            })
+            .state('dashboard.statistics', {
+                templateUrl: 'views/pages/statistics.html',
+                url: '/statistics'
             })
             .state('login', {
                 templateUrl: 'views/pages/login.html',
