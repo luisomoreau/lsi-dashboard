@@ -6,10 +6,10 @@
  * @description
  * # adminPosHeader
  */
-angular.module('sbAdminApp')
-	.directive('chat',function(){
+angular.module('lsiDashboard')
+	.directive('lastcertificates',function(){
 		return {
-        templateUrl:'scripts/directives/chat/chat.html',
+        templateUrl:'scripts/directives/lastcertificates/lastcertificates.html',
         restrict: 'E',
         replace: true,
     	}

@@ -1,14 +1,14 @@
 'use strict';
 /**
  * @ngdoc overview
- * @name sbAdminApp
+ * @name lsiDashboard
  * @description
- * # sbAdminApp
+ * # lsiDashboard
  *
  * Main module of the application.
  */
 angular
-    .module('sbAdminApp', [
+    .module('lsiDashboard', [
         'oc.lazyLoad',
         'ui.router',
         'ui.bootstrap',
@@ -31,7 +31,7 @@ angular
                     loadMyDirectives: function ($ocLazyLoad) {
                         return $ocLazyLoad.load(
                             {
-                                name: 'sbAdminApp',
+                                name: 'lsiDashboard',
                                 files: [
                                     'scripts/directives/header/header.js',
                                     'scripts/directives/header/header-notification/header-notification.js',
@@ -50,11 +50,6 @@ angular
                             {
                                 name: 'ngAnimate',
                                 files: ['bower_components/angular-animate/angular-animate.js']
-                            })
-                        $ocLazyLoad.load(
-                            {
-                                name: 'ngCookies',
-                                files: ['bower_components/angular-cookies/angular-cookies.js']
                             })
                         $ocLazyLoad.load(
                             {
@@ -77,26 +72,19 @@ angular
             .state('dashboard.home', {
                 url: '/home',
                 controller: 'MainCtrl',
-                templateUrl: 'views/dashboard/home.html',
+                templateUrl: '../views/pages/dashboard.html',
                 resolve: {
                     loadMyFiles: function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
-                            name: 'sbAdminApp',
+                            name: 'lsiDashboard',
                             files: [
                                 'scripts/controllers/main.js',
-                                'scripts/directives/timeline/timeline.js',
-                                'scripts/directives/notifications/notifications.js',
-                                'scripts/directives/chat/chat.js',
                                 'scripts/directives/dashboard/stats/stats.js',
-                                'scripts/directives/topscores/topscores.js'
+                                'scripts/directives/lastcertificates/lastcertificates.js'
                             ]
                         })
                     }
                 }
-            })
-            .state('dashboard.form', {
-                templateUrl: 'views/form.html',
-                url: '/form'
             })
             .state('dashboard.blank', {
                 templateUrl: 'views/pages/blank.html',
@@ -105,54 +93,6 @@ angular
             .state('login', {
                 templateUrl: 'views/pages/login.html',
                 url: '/login'
-            })
-            .state('dashboard.chart', {
-                templateUrl: 'views/chart.html',
-                url: '/chart',
-                controller: 'ChartCtrl',
-                resolve: {
-                    loadMyFile: function ($ocLazyLoad) {
-                        return $ocLazyLoad.load({
-                            name: 'chart.js',
-                            files: [
-                                'bower_components/angular-chart.js/dist/angular-chart.min.js',
-                                'bower_components/angular-chart.js/dist/angular-chart.css'
-                            ]
-                        }),
-                            $ocLazyLoad.load({
-                                name: 'sbAdminApp',
-                                files: ['scripts/controllers/chartContoller.js']
-                            })
-                    }
-                }
-            })
-            .state('dashboard.table', {
-                templateUrl: 'views/table.html',
-                url: '/table'
-            })
-            .state('dashboard.panels-wells', {
-                templateUrl: 'views/ui-elements/panels-wells.html',
-                url: '/panels-wells'
-            })
-            .state('dashboard.buttons', {
-                templateUrl: 'views/ui-elements/buttons.html',
-                url: '/buttons'
-            })
-            .state('dashboard.notifications', {
-                templateUrl: 'views/ui-elements/notifications.html',
-                url: '/notifications'
-            })
-            .state('dashboard.typography', {
-                templateUrl: 'views/ui-elements/typography.html',
-                url: '/typography'
-            })
-            .state('dashboard.icons', {
-                templateUrl: 'views/ui-elements/icons.html',
-                url: '/icons'
-            })
-            .state('dashboard.grid', {
-                templateUrl: 'views/ui-elements/grid.html',
-                url: '/grid'
             })
     }]);
 

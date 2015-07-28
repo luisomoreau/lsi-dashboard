@@ -6,16 +6,26 @@
                 <a ui-sref="dashboard.home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="dashboard.blank"><i class="fa fa-user fa-fw"></i> Utilisateurs</a>
+                <a ui-sref="dashboard.blank"><i class="fa fa-pencil-square-o fa-fw"></i> Nouveau certificat</a>
+            </li>
+            <li ng-class="{active: collapseVar==1}">{{dropDown}}
+                <a href="" ng-click="check(1)"><i class="fa fa-archive fa-fw"></i> Archives<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.blank"><i class="fa fa-connectdevelop fa-fw"></i> Epreuves</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.blank"><i class="fa fa-certificate fa-fw"></i> Certificats</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.blank"><i class="fa fa-fire-extinguisher fa-fw"></i> Bouteilles</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="dashboard.blank"><i class="fa fa-users fa-fw"></i> Equipes</a>
-            </li>
-            <li ui-sref-active="active">
-                <a ui-sref="dashboard.blank"><i class="fa fa-building fa-fw"></i> Résidences</a>
-            </li>
-            <li ui-sref-active="active">
-                <a ui-sref="dashboard.blank"><i class="fa fa-envelope fa-fw"></i> Messages</a>
+                <a ui-sref="dashboard.blank"><i class="fa fa-database fa-fw"></i> Back Office</a>
             </li>
             <li ui-sref-active="active">
                 <a ui-sref="dashboard.blank"><i class="fa fa-bar-chart-o fa-fw"></i> Statistiques</a>

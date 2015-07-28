@@ -1,12 +1,12 @@
 'use strict';
 /**
  * @ngdoc function
- * @name sbAdminApp.controller:MainCtrl
+ * @name lsiDashboard.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the sbAdminApp
+ * Controller of the lsiDashboard
  */
-angular.module('sbAdminApp')
+angular.module('lsiDashboard')
   .controller('MainCtrl', function($scope,$position) {
       $scope.topScore = {
         team:[
